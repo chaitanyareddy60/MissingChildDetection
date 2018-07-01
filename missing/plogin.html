@@ -1,0 +1,159 @@
+<html>
+<head>
+		<script type="text/javascript">
+					function validateform()
+{  
+var name=myform.userid.value;  
+var password=myform.pwd.value;  
+var f=/^\w+([\.-]?\w+)*@\w+?.\w{3}$/;
+if(f.test(name)){
+	if(password.length<6){  
+  alert("Password must be at least 6 characters long.");  
+  myform.pwd.focus();
+  return false;  
+}
+return true;
+}
+else {
+		alert("invalid email");
+myform.userid.focus();
+      return false; 
+}
+}  
+		</script>
+	<style type="text/css">
+		body
+{
+margin:0;
+padding:0;
+background-size:cover;
+font-family:sans-serif;
+background: url(.jpg);
+}
+p{
+
+}
+.loginBox
+{
+border-radius: 20px;	
+position: absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:400px;
+height:620px;
+padding:80px 40px;
+padding-bottom: 50px;
+box-sizing:border-box;
+background:rgba(0,0,0,.5);
+}
+.user
+{   
+	padding-top: 40px;
+	width:100px;
+	height:100px;
+	border-radius:50%;
+	overflow:hidden;
+	position:absolute;
+	top: calc(-100px/2);
+	left: calc(50% - 50px);
+}
+h2
+{   
+	font-family: cooper black;
+	padding-top: 40px;
+	margin:0;
+	color: #efed40;
+	text-align:center;
+}
+.loginBox p
+{
+	color: #4E1B46;
+	font-family: cooper black;
+}
+.loginBox padding{
+	margin:0;
+	padding:0;
+	font-weight:bold;
+	color:#fff;
+	
+}
+.loginBox input
+{
+	width:100%;
+	margin-bottom:20px;
+	
+}
+.loginBox input[type="text"],
+.loginBox input[type="password"]
+{
+	border:none;
+	border-bottom:1px solid #fff;
+	background: transparent;
+	outline:none;
+	height:40px;
+	color:#fff;
+	font-size:16px;
+	
+}
+.button {
+    background-color: #5882FA;
+    border-style: none;
+	border-radius:25px;
+    color: white;
+    padding: 10px 120px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+	 opacity: 1.8s;
+  transition: 0.3s;
+}
+.but{
+	 background-color: #5882FA;
+    border-style: none;
+	border-radius:25px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+	 opacity: 1.8s;
+	 width: 80%;
+  transition: 0.3s;
+}
+.button:hover {opacity: 0.6}
+.but:hover{opacity:0.6}
+::placeholder
+{
+	color: rgba(255,255,255,.5);
+}
+
+
+.loginBox a
+{
+	color:#ff;
+	 
+}
+	</style>
+</head>
+<body background="">
+	<div class="loginBox">
+		<h2>Login</h2>
+		<form name="myform" method="POST" action="valid.php">
+			<p> User Id</p>
+			<input type="text" name="userid" placeholder="Userid" required>
+			<p>Password</p>
+			<input type="password" name="pwd" placeholder="Enter Password" required>
+			<button onclick ="return validateform()" >login</button>
+			<a href="child.php" class="but">Cancel</a>
+			<p>New To Website?</p><a href="signup1.html" class="but">SignUp</a>
+		</form>
+	<div>
+</body>
+</html>

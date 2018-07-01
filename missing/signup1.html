@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+function go()
+{
+var a=f1.uname.value;
+var c=f1.pwd.value;
+var d=f1.cpwd.value;
+var e=f1.mail.value;
+var f=/^\w+([\.-]?\w+)*@\w+([\.-]?\w{3})$/;
+var g=f1.mno.value;
+if(a.length>15){
+alert("name should be less than 20 char");
+f1.uname.focus();
+return false;
+}
+else if(c!=d)
+{
+alert("password doesn't match");
+f1.pwd.focus();
+return false;
+}
+else if(f.test(e)==false)
+{
+alert("invalid mail");
+f1.mail.focus();
+return false;
+}
+else if(g.length!=10 || /^\d{10}$/.test(g)==false){
+alert("invalid mobno");
+return false;
+}
+}
+</script>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+button:hover {
+    opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+</style>
+<body>
+
+
+  <div class="container">
+    <h1>Sign Up</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+    <form name="f1" method="POST" action="reg.php" style="border:1px solid #ccc">
+	<label for="email"><b>Username</b></label>
+    <input type="text" name="uname" id="butt" placeholder="Name" required>
+	<label for="email"><b>Mobile Number</b></label>
+		<input type="text" name="mno" id="butt" placeholder="Mobile Number" required>
+		<label for="email"><b>Email</b></label>
+		<input type="text" name="mail" id="butt" placeholder="Mail Id" required>
+		<label for="email"><b>Aadhar</b></label>
+		<input type="text" name="aadharno" id="butt" placeholder="Aadhar No" required>
+		<label for="email"><b>Password</b></label>
+		<input type="password" name="cpwd" id="butt" placeholder="Password" required>
+		<label for="email"><b>Confirm Password</b></label>
+		<input type="password" name="pwd" id="butt" placeholder="Confirm Password" required>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" onclick="return go();">Sign Up</button>
+    </div>
+  </div>
+</form>
+
+</body>
+</html>

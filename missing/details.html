@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <script type="text/javascript">
+    function valid(){
+      var caadhar=f1.caadhar.value;
+      var paadhar=f1.paadhar.value;
+      var mobno=f1.number.value;
+
+      if(caadhar.length!=12){
+        alert("invalid aadharno");
+        f1.caadhar.focus();
+        return false;
+      }
+      if(paadhar.length!=12){
+        alert("invalid aadharno");
+                f1.paadhar.focus();
+
+        return false;
+      }
+       if(mobno.length!=10){
+        alert("invalid mobno");
+                f1.mobno.focus();
+        return false;
+      }
+    }
+  </script>
+	<style type="text/css">
+		body{
+              background-color: lightgreen;
+		}
+		h2{
+			text-align: center;
+			text-transform: uppercase;
+			font-family: Times new roman;
+		}
+		h1{
+			font-family: cooper black;
+		}
+          .container .left p
+          {
+               font-family: comic sans ms;
+          }
+          .container .right p
+          {
+               font-family: comic sans ms;
+          }
+          
+.container .left
+{
+     background-color: none;
+     float: left;
+     width: 50%;
+     height: 570px;
+     background-size: cover;
+     box-sizing: border-box;
+}
+.container .left .chai{
+     padding-left: 50px;
+}
+.container .right
+{
+background-color: none;
+          padding-right: 0px;
+     float: right;
+     width: 50%;
+     height: 570px;
+     box-sizing: border-box;
+}
+.container .left input{
+     padding-right: 20px;
+}
+.container .right input{
+     border-radius: 0px;
+     }
+
+.container .right .chai{
+     padding-left: 50px;
+}
+.button {
+     font-family: cooper black;
+    background-color: #5882FA;
+    border-style: none;
+     border-radius:25px;
+    color: white;
+    padding: 15px 32px;
+    padding-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 4px 2px;
+    cursor: pointer;
+      opacity: 1;
+  transition: 0.3s;
+}
+.but{ 
+    float: right;
+  font-family: cooper black;
+    background-color: #5882FA;
+    border-style: none;
+     border-radius:25px;
+    color: white;
+    padding: 15px 32px;
+    padding-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 4px 2px;
+    cursor: pointer;
+      opacity: 1;
+  transition: 0.3s;
+}
+
+	</style>
+</head>
+<body>
+<form name="f1" method="POST" action="insert.php" enctype="multipart/form-data" >
+         <div class="container">
+          <h2><font size="6">Lost Child Form</font></h2> 
+               <div class="left">
+                    <div class="chai">
+     <h1>Child Details</h1>
+     <p>Name</p>
+     <input type="text" name="name" placeholder="enter name" required>
+     <p>Guardian</p>
+     <input type="text" name="guardian" placeholder="enter name" required>
+     <p>Eye-color</p>
+     <input type="text" name="eye" placeholder="enter" required>
+     <p>DoB</p>
+     <input type="text" name="dob" placeholder="dd/mm/yyyy" required>
+     <p>Aadhar no</p>
+     <input type="text" name="caadhar" placeholder="enter" required>
+     <p>Hair-color</p>
+     <input type="text" name="hair" placeholder="enter" required>
+     <p>Complexion</p>
+     <input type="text" name="com" placeholder="enter" required><br>
+</div>
+</div>
+       <div class="right">
+          <div class="chai">
+     <h1>Parent Details</h1>
+      <p>Name</p>
+     <input type="text" name="pname" placeholder="enter name" required>
+     <p>Phone No</p>
+     <input type="text" name="number" placeholder="phone number" required>
+     <p>Aadhar no</p>
+     <input type="text" name="paadhar" placeholder="enter" required>
+     <p>Address</p>
+     <textarea name="address" placeholder="enter address...." rows="5" cols="50"></textarea>
+	 <p>Child Image</p>
+	 <input type="file" name="image">
+</div>
+</div>
+</div>
+<center>
+<button onclick="return valid()">submit</button></center>
+</form>
+ </body>
+</html>
